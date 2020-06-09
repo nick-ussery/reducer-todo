@@ -18,6 +18,8 @@ const Todo = () =>{
     }
 
     // console.log('state before mapping', state.todos)
+
+    
     const [list, setList] = useState(state.todos.map(todo=>{
         // console.log('todo given to mapping', todo)
         return (<div style={(todo.completed===true) ? {marginLeft: 'auto', marginRight: 'auto',width: '500px',border: '1px solid black',background:'red'} : {marginLeft: 'auto', marginRight: 'auto',width:'500px',border: '1px solid black',background:'white'}} key={todo.id}>
@@ -34,7 +36,7 @@ const Todo = () =>{
         </div>)}))
     // console.log('state',list)
     useEffect(()=>{
-        if(!state.todos){return }
+        if(state.todos.length === undefined){return (<div>No Current Tasks</div>)}
         setList(
         state.todos.map(todo=>{
             // console.log('todo given to mapping', todo)
