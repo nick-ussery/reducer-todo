@@ -19,11 +19,10 @@ export const reducer = (state, action) =>{
 
             return{
                 ...state,
-                todos:{
-                    ...state.todos.filter(todo=>{
+                todos:state.todos.filter(todo=>{
                         return todo.completed === false
-                    })
-                }
+                })
+                
             }
         case 'TOGGLE_COMPLETED':
             // console.log('toggle start')
